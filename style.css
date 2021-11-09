@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #333;
+    color: #fff;
+    line-height: 1.6;
+    /* overflow: hidden; */
+}
+
+/* styling slider container */
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 30px;
+}
+
+.slide .content h1 {
+    margin-bottom: 10px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: 700ms ease-in-out 300ms;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+/* Buttons */
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    cursor: pointer;
+}
+
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    cursor: pointer;
+}
+
+.buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 15px 13px;
+    border-radius: 51%;
+    outline: none;
+    transition: 500ms ease;
+}
+
+.buttons button:hover {
+    background-color: #fff;
+    color: #333;
+    transition: 500ms ease;
+}
+
+/* Media queries */
+@media(max-width: 500px) {
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slide.current .content {
+        transform: translateY(-300px)
+    }
+}
+
+/* Background images */
+.slide:first-child {
+    background: url(./images/pexels-daniel-xavier-908602.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url(./images/pexels-dennis-magati-862848.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url(./images/pexels-misha-voguel-9737764.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url(./images/pexels-pixabay-247204.jpg) no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url(./images/pexels-vinicius-wiesehofer-1090393.jpg) no-repeat center center/cover;
+}
